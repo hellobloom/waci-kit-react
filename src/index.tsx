@@ -1,11 +1,11 @@
 import React, { FC, useMemo } from 'react';
 import Bowser from 'bowser';
 import { ComponentProps } from 'react-forward-props';
+import { QROptions } from '@bloomprotocol/qr-react';
 
 import { ButtonOptions, CommonWACIElementProps, ModeFn } from './types';
 import { WACIQRElement } from './qr';
 import { WACIButtonElement } from './button';
-import { QROptions } from './qr/renderer';
 
 type AlwaysButtonWACIElementProp = CommonWACIElementProps & {
   mode: 'button';
@@ -52,22 +52,12 @@ export const WACIElement: FC<WACIElementProps> = ({
 
   switch (mode) {
     case 'qr': {
-      const { data, qrProps, ...rest } = props as AlwaysQRWACIElementProp;
-      const restAny: any = { ...rest };
-      delete restAny.buttonProps;
-
-      return <WACIQRElement data={data} {...qrProps} {...restAny} />;
+      const { data, qrProps } = props as AlwaysQRWACIElementProp;
+      return <WACIQRElement data={data} {...qrProps} />;
     }
     case 'button': {
-      const {
-        data,
-        buttonProps,
-        ...rest
-      } = props as AlwaysButtonWACIElementProp;
-      const restAny: any = { ...rest };
-      delete restAny.qrProps;
-
-      return <WACIButtonElement data={data} {...buttonProps} {...restAny} />;
+      const { data, buttonProps } = props as AlwaysButtonWACIElementProp;
+      return <WACIButtonElement data={data} {...buttonProps} />;
     }
     default:
       throw new Error(`Unsupported mode: ${mode}`);

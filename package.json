@@ -1,9 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.0-beta.0",
   "name": "@bloomprotocol/waci-kit-react",
   "description": "Render a QR Code or button to initiate a WACI interaction",
   "author": "Bloom Team <team@bloom.co>",
   "license": "Apache-2.0",
+  "repository": "https://github.com/hellobloom/waci-kit-react",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "module": "dist/waci-kit-react.esm.js",
@@ -21,16 +22,16 @@
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint src test stories",
     "prepare": "tsdx build",
-    "prepublishOnly": "npm run test && npm run lint && npm run size",
+    "prepublishOnly": "npm run test && npm run size",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@bloomprotocol/qr-react": "^3.0.0",
     "bowser": "^2.11.0",
     "common-tags": "^1.8.0",
-    "qr.js": "0.0.0",
     "react-forward-props": "^1.1.2"
   },
   "peerDependencies": {
@@ -69,7 +70,6 @@
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "size-limit": "^4.10.1",
-    "snapshot-diff": "^0.8.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.2.3"

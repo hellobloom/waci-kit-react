@@ -26,7 +26,7 @@ describe('QR', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ecLevel', () => {
+  it('ec level', () => {
     const { asFragment } = render(
       <QR.ECLevel {...getArgs(QR.ECLevel.args as any)} />
     );
@@ -40,21 +40,28 @@ describe('QR', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('shouldHideLogo', () => {
+  it('hide logo', () => {
     const { asFragment } = render(
       <QR.HideLogo {...getArgs(QR.HideLogo.args as any)} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('logoOpacity', () => {
+  it('logo opacity', () => {
     const { asFragment } = render(
       <QR.LogoOpacity {...getArgs(QR.LogoOpacity.args as any)} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('customProps', () => {
+  it('custom logo', () => {
+    const { asFragment } = render(
+      <QR.LogoOpacity {...getArgs(QR.LogoOpacity.args as any)} />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('custom props', () => {
     const { asFragment } = render(
       <QR.CustomProps {...getArgs(QR.CustomProps.args as any)} />
     );

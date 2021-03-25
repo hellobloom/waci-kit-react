@@ -63,68 +63,7 @@ This is the [WACI payload](https://specs.bloom.co/wallet-credential-interactions
 
 ### QR Props
 
-In addition to the custom props outlined below you can provide any extra `<svg>` props.
-
-| Name    | Description                                                            | Type                      | Default                   |
-| ------- | ---------------------------------------------------------------------- | ------------------------- | ------------------------- |
-| bgColor | Background color of the QR code                                        | `string`                  | `"#ffffff00"`             |
-| fgColor | Color of the QR code dots and eyes                                     | `string`                  | `"#6067f1"`               |
-| logo    | Configuration of the logo to be displayed in the center of the QR code | [See below](#logo-config) | [See below](#logo-config) |
-
-```tsx
-import { FC } from 'react';
-import { WACIElement } from '@bloomprotocol/waci-kit-react';
-
-const MyComp: FC = () => {
-  return (
-    <WACIElement
-      mode="qr"
-      data={{
-        challengeTokenUrl:
-          'https://example.com/api/v1/waci-challenge/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
-        version: '1',
-      }}
-      qrProps={{
-        fgColor: 'red',
-        onClick: () => {
-          alert('Clicked!');
-        },
-      }}
-    />
-  );
-};
-```
-
-#### Logo Config
-
-| Name    | Description                                     | Type     | Default               |
-| ------- | ----------------------------------------------- | -------- | --------------------- |
-| image   | URL of the image to display (can be a data URL) | `string` | SVG of the Bloom logo |
-| width   | Width of the image                              | `number` | 20% of the QR code    |
-| height  | Height of the image                             | `number` | `width`               |
-| opacity | Opacity of the image                            | `number` | `1`                   |
-
-```tsx
-import { FC } from 'react';
-import { WACIElement } from '@bloomprotocol/waci-kit-react';
-
-const MyComp: FC = () => {
-  return (
-    <WACIElement
-      data={{
-        challengeTokenUrl:
-          'https://example.com/api/v1/waci-challenge/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
-        version: '1',
-      }}
-      qrProps={{
-        logo: {
-          image: 'https://placekitten.com/200/200',
-        },
-      }}
-    />
-  );
-};
-```
+The QR props come from [QR React](https://github.com/hellobloom/qr-react), for more details look [here](https://github.com/hellobloom/qr-react#props).
 
 ### Button Props
 

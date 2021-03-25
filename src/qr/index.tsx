@@ -1,9 +1,9 @@
 import React from 'react';
 import { FC } from 'react-forward-props';
+import { QR, QRProps } from '@bloomprotocol/qr-react';
 
 import { useId } from '../utils';
 import { CommonWACIElementProps } from '../types';
-import { QR, QRProps } from './renderer';
 
 export type WACIQRElementProps = CommonWACIElementProps & QRProps;
 
