@@ -45,12 +45,12 @@ const MyComp: FC = () => {
 
 ## Props
 
-| Name        | Description                                      | Type                                                                              |
-| ----------- | ------------------------------------------------ | --------------------------------------------------------------------------------- |
-| data        | The data to be rendered in the QR code or button | [See below](#data)                                                                |
-| mode        | Whether to render a QR code or button            | `"qr" | "button" | (parsedResult: Bowser.Parser.ParsedResult) => "qr" | "button"` |
-| qrProps     | Props for the rendered QR code                   | [See below](#qr-props)                                                            |
-| buttonProps | Props for the rendered button                    | [See below](#button-props)                                                        |
+| Name        | Description                                      | Type                                                                                   |
+| ----------- | ------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| data        | The data to be rendered in the QR code or button | [See below](#data)                                                                     |
+| mode        | Whether to render a QR code or button            | `"qr" \| "button" \| (parsedResult: Bowser.Parser.ParsedResult) => ("qr" \| "button")` |
+| qrProps     | Props for the rendered QR code                   | [See below](#qr-props)                                                                 |
+| buttonProps | Props for the rendered button                    | [See below](#button-props)                                                             |
 
 ### Data
 
@@ -71,7 +71,7 @@ In addition to the custom props outlined below you can provide any extra `<a>` p
 
 | Name   | Description                                                                                      | Type                                           | Required |
 | ------ | ------------------------------------------------------------------------------------------------ | ---------------------------------------------- | -------- |
-| size   | The size of button to render                                                                     | `"lg" | "md" | "sm"`                           | Yes      |
+| size   | The size of button to render                                                                     | `"lg" \| "md" \| "sm"`                         | Yes      |
 | type   | The type of button to render                                                                     | Dependent on `size`, [see below](#button-type) | Yes      |
 | invert | Whether the text and background colors should be switched (only applicable when `size === "sm"`) | `boolean`                                      | No       |
 
@@ -99,8 +99,8 @@ const MyComp: FC = () => {
 
 #### Button Type
 
-| Size   | Type                                                    |
-| ------ | ------------------------------------------------------- |
-| `"lg"` | `"log-in" | "sign-up" | "connect" | "bloom" | "verify"` |
-| `"md"` | `"log-in" | "sign-up" | "connect" | "bloom" | "verify"` |
-| `"sm"` | `"square" | "rounded-square" | "circle" | "squircle"`   |
+| Size   | Type                                                        |
+| ------ | ----------------------------------------------------------- |
+| `"lg"` | `"log-in" \| "sign-up" \| "connect" \| "bloom" \| "verify"` |
+| `"md"` | `"log-in" \| "sign-up" \| "connect" \| "bloom" \| "verify"` |
+| `"sm"` | `"square" \| "rounded-square" \| "circle" \| "squircle"`    |
