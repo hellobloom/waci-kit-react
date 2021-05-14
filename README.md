@@ -1,3 +1,7 @@
+:warning: **_Notice_** :warning:
+
+This library is no longer maintained, please use [ssi-sdk](https://github.com/hellobloom/ssi-sdk) instead.
+
 # WACI Kit React
 
 Render a QR Code or button to [initiate a WACI interaction](https://specs.bloom.co/wallet-credential-interactions/#qr-code-or-link)
